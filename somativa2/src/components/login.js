@@ -1,3 +1,4 @@
+// components/Login.js
 import React, { useState } from 'react';
 import { auth } from '../firebase';
 
@@ -15,6 +16,7 @@ const Login = () => {
 
   const handleLogin = async (event) => {
     event.preventDefault();
+
     try {
       await auth.signInWithEmailAndPassword(email, senha);
       alert('Login bem-sucedido!');
