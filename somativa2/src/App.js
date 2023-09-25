@@ -1,14 +1,20 @@
-// App.js
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Routes from './routes/index';
 import Login from './components/login';
-import { initializeApp } from 'firebase/app';
+import Dashboard from './components/dashboard';
+import Cadastro from './components/cadastro';
 
 function App() {
   return (
-    <div className="App">
-      <Login />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
+
   );
 }
 
